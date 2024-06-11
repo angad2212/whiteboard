@@ -1,0 +1,23 @@
+This React component App is a simple drawing application that allows users to draw lines, rectangles, and text on a canvas. It uses the roughjs library for creating rough shapes and perfect-freehand for creating smooth pencil drawings. Here's a breakdown of the key parts of the code:
+
+useState: The component uses several useState hooks to manage the state of the application, including the list of elements drawn on the canvas, the current action (e.g., drawing, moving, resizing), the selected tool (e.g., line, rectangle, pencil), the currently selected element, and the pan offset for panning the canvas.
+
+useEffect and useLayoutEffect: These hooks are used to perform side effects such as updating the canvas when the list of elements changes (useLayoutEffect) and setting up event listeners for keyboard shortcuts (useEffect).
+
+createElement: A helper function that creates a new element object based on the type of element (line, rectangle, pencil, text) and its coordinates.
+
+getMouseCoordinates: A helper function that calculates the mouse coordinates relative to the canvas based on the current pan offset.
+
+handleMouseDown, handleMouseMove, handleMouseUp: Event handlers for mouse interactions (e.g., drawing, moving, resizing elements, panning the canvas).
+
+drawElement: A function that draws an element on the canvas based on its type (line, rectangle, pencil, text).
+
+adjustElementCoordinates: A function that adjusts the coordinates of an element to ensure consistency (e.g., for rectangles, ensuring x1 is less than x2 and y1 is less than y2).
+
+useHistory: A custom hook that manages a history of states for undo and redo functionality.
+
+getSvgPathFromStroke: A function that converts a pencil stroke (array of points) into an SVG path string for rendering.
+
+usePressedKeys: A custom hook that tracks which keys are currently pressed.
+
+Overall, the App component provides a basic drawing interface with support for drawing, moving, resizing, undoing, and redoing elements on a canvas.
